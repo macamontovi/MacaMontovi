@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maca Montovi — <span data-es>Media Kit</span><span data-en style="display:none">Media Kit</span></title>
+  <meta name="description" content="Cantautora, multiinstrumentista y escritora del Alto Valle. Folk-rock, blues y raíz latinoamericana con poesía profunda." />
+  <style>
+    :root {
+      --bg:#0b0f14; --fg:#f4f6f8; --muted:#b8c2cc;
+      --card: rgba(15, 22, 33, .70);
+      --line: rgba(255,255,255,.10);
+      --accent: #f3d44e;
+      --max: 1040px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
+      color:var(--fg);
+      background: var(--bg);
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(12px);
+      background: rgba(11,15,20,.55);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav{
+      max-width:var(--max); margin:0 auto; padding:12px 24px;
+      display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
+    }
+    .brand{display:flex; align-items:center; gap:10px}
+    .brand strong{letter-spacing:.02em}
+    .pill{font-size:12px; background: var(--accent); color: #0b0f14; padding:4px 10px; border-radius:999px; font-weight:800}
+    nav a{text-decoration:none; color:var(--muted); margin-left:14px; font-size:14px}
+    nav a:hover{color:var(--fg)}
+
+    /* Hero */
+    .hero{
+      position:relative;
+      border-radius:24px;
+      overflow:hidden;
+      min-height: 520px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:0;
+      background-image: url('assets/page1_img1.jpeg');
+      background-size: cover;
+      background-position: 75% 20%;
+      filter: saturate(1.05) contrast(1.05);
+      transform: scale(1.02);
+    }
+    .hero::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(90deg, rgba(11,15,20,.92) 0%, rgba(11,15,20,.55) 55%, rgba(11,15,20,.35) 100%);
+    }
+    .hero-inner{
+      position:relative;
+      padding: 34px;
+      display:grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 18px;
+      align-items:end;
+      min-height: 520px;
+    }
+    .kicker{color: rgba(255,255,255,.75); letter-spacing:.14em; text-transform:uppercase; font-size:12px}
+    h1{margin:10px 0 8px; font-size:44px; line-height:1.05}
+    .lead{margin:0; color: rgba(255,255,255,.80); font-size:18px; max-width:70ch}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px; border-radius:14px;
+      border:1px solid var(--line); background: rgba(255,255,255,.04);
+      text-decoration:none;
+    }
+    .btn:hover{background: rgba(255,255,255,.10)}
+    .btn.primary{background: var(--accent); color:#0b0f14; border-color: transparent; font-weight:800}
+    .quick{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .chip{border:1px solid var(--line); padding:7px 10px; border-radius:999px; text-decoration:none; color:rgba(255,255,255,.82); background: rgba(255,255,255,.03)}
+    .chip:hover{background: rgba(255,255,255,.10); color:var(--fg)}
+
+    .hero-card{
+      background: rgba(15,22,33,.60);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 20px;
+      padding: 14px;
+    }
+    .contact-line{color: rgba(255,255,255,.82); font-size:14px; line-height:1.5}
+    .contact-line a{text-decoration:none; border-bottom:1px solid rgba(243,212,78,.35)}
+    .contact-line a:hover{border-bottom-color: rgba(243,212,78,.85)}
+    .mini{color: rgba(255,255,255,.70); font-size:12px; margin-top:10px}
+
+    /* Sections */
+    section{padding: 26px 0}
+    .grid{display:grid; grid-template-columns: repeat(12, 1fr); gap:14px}
+    .card{
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.22);
+    }
+    .card h2{margin:0 0 10px; font-size:22px}
+    .card h3{margin:0 0 8px; font-size:16px}
+    .card p{margin:0; color: var(--muted); line-height:1.6}
+    .span-7{grid-column: span 7}
+    .span-5{grid-column: span 5}
+    .span-6{grid-column: span 6}
+    .span-4{grid-column: span 4}
+    .span-12{grid-column: span 12}
+
+    .bio-figure{
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+    }
+    .bio-figure img{display:block; width:100%; height:auto}
+
+    .quote{border-left: 3px solid rgba(243,212,78,.75); padding-left:12px; color: rgba(255,255,255,.92); line-height:1.55}
+    .source{margin-top:10px; color: rgba(255,255,255,.70); font-size:13px}
+
+    iframe{width:100%; height:420px; border:0; border-radius: 18px}
+
+    footer{padding: 22px 0 34px; color: rgba(255,255,255,.55); font-size:13px}
+
+    @media (max-width: 920px){
+      .hero-inner{grid-template-columns: 1fr; align-items:start}
+      h1{font-size:36px}
+      .span-7,.span-6,.span-5,.span-4{grid-column: span 12}
+      iframe{height:340px}
+    }
+  
+    .hero::before, .hero::after{pointer-events:none;}
+    .hero > *{position:relative; z-index:1;}
+
+  </style>
+</head>
+
+<body>
+<div id="lang-es">
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <strong>Maca Montovi</strong>
+        <span class="pill">MEDIA KIT 2025</span>
+      </div>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#musica">Música</a>
+        <a href="#prensa"><span data-es>Prensa</span><span data-en style="display:none">Press</span></a>
+        <a href="#contacto"><span data-es>Contacto</span><span data-en style="display:none">Contact</span></a>
+      </nav>
+    </div>
+  <div class="lang" style="margin-left:auto;font-size:14px"><a href="#" data-langbtn="es">ES</a> | <a href="#" data-langbtn="en">EN</a></div></header>
+
+  <div class="wrap">
+    <div class="hero" role="banner" aria-label="Portada">
+      <div class="hero-inner">
+        <div>
+          <div class="kicker">Cantautora • Multiinstrumentista • Escritora</div>
+          <h1>Maca Montovi</h1>
+          <p class="lead">
+            Folk • Rock • Raíz latinoamericana — canciones atravesadas por el paisaje patagónico, con una lírica profunda, poética, feminista y comprometida.
+          </p>
+
+          <div class="cta">
+            <a class="btn primary" href="mailto:macamontovi@gmail.com"><span data-es>Contrataciones</span><span data-en style="display:none">Bookings</span></a>
+            <a class="btn" href="https://open.spotify.com/album/5vfARodClnxv7RDfROYTUC?si=YPVlgCpNTA24aKGU3jAATQ" target="_blank" rel="noopener">Escuchar en Spotify</a>
+            <a class="btn" href="https://youtu.be/LpT8nBG0h-A" target="_blank" rel="noopener">Ver video</a>
+          </div>
+
+          <div class="quick" aria-label="Links">
+            <a class="chip" href="https://www.instagram.com/macamontovi/" target="_blank" rel="noopener">Instagram</a>
+            <a class="chip" href="https://tidal.com/browse/artist/23736854" target="_blank" rel="noopener">Tidal</a>
+            <a class="chip" href="https://www.youtube.com/channel/UCK7TW81GBDdIOm1QP8N-A7w" target="_blank" rel="noopener">YouTube</a>
+          </div>
+
+          <div class="mini">Pringles 335, NQN · +54 9 299 454 3271</div>
+        </div>
+
+        <div class="hero-card" aria-label="Contacto">
+          <div class="contact-line">
+            <div><strong>Email</strong> · <a href="mailto:macamontovi@gmail.com">macamontovi@gmail.com</a></div>
+            <div><strong>WhatsApp</strong> · <a href="tel:+5492994543271">+54 9 299 454 3271</a></div>
+            <div><strong>Dirección</strong> · Pringles 335, NQN</div>
+          </div>
+          <div class="mini" style="margin-top:12px">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="sobre">
+      <div class="grid">
+        <div class="card span-7">
+          <h2><span data-es>Sobre</span><span data-en style="display:none">About</span></h2>
+          <p>
+            Es cantautora, multiinstrumentista y escritora, oriunda del Alto Valle de la Patagonia argentina. En sus composiciones,
+            atravesadas por la sonoridad e imágenes propias del paisaje sureño, se fusionan géneros como el rock y el blues con la música popular
+            latinoamericana y otras influencias de la música del mundo.
+          </p>
+          <p style="margin-top:12px">
+            Su proyecto se presenta en diversos formatos (solo set, dúo, trío y full banda), con repertorio de canciones de su primer disco
+            <em>Despierta</em> (2021) y material de su segundo álbum de estudio <em>La forma del agua</em>, además de versiones de clásicos que la influenciaron.
+          </p>
+          <p style="margin-top:12px">
+            En ocasiones presenta un espectáculo multidisciplinario que incluye poesía de su libro <em>La tumba de las aves</em>.
+          </p>
+        </div>
+
+        <div class="span-5">
+          <div class="bio-figure">
+            <img src="assets/page3_img2.jpeg" alt="Maca Montovi — foto" />
+          </div>
+          <div class="bio-figure" style="margin-top:14px">
+            <img src="assets/page2_img1.jpeg" alt="Media kit — composición visual" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="musica">
+      <div class="grid">
+        <div class="card span-4">
+          <h2><span data-es>Música</span><span data-en style="display:none">Music</span></h2>
+          <p>
+            <a class="btn" href="https://open.spotify.com/album/5vfARodClnxv7RDfROYTUC?si=YPVlgCpNTA24aKGU3jAATQ" target="_blank" rel="noopener">Spotify</a>
+          </p>
+        </div>
+        <div class="card span-4">
+          <h2>&nbsp;</h2>
+          <p>
+            <a class="btn" href="https://tidal.com/browse/artist/23736854" target="_blank" rel="noopener">Tidal</a>
+          </p>
+        </div>
+        <div class="card span-4">
+          <h2>&nbsp;</h2>
+          <p>
+            <a class="btn" href="https://www.youtube.com/channel/UCK7TW81GBDdIOm1QP8N-A7w" target="_blank" rel="noopener">YouTube</a>
+          </p>
+        </div>
+
+        <div class="card span-12">
+          <h3>Video destacado</h3>
+          <iframe src="https://www.youtube.com/embed/LpT8nBG0h-A" title="Video destacado — Maca Montovi" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="prensa">
+      <div class="grid">
+        <div class="card span-12" style="padding:0; overflow:hidden">
+          <img src="assets/page3_img1.jpeg" alt="Prensa — fondo" style="width:100%; height:auto; display:block; opacity:.92" />
+        </div>
+
+        <div class="card span-6">
+          <div class="quote">
+            “Otra de las increíbles cantantes y artistas que tiene esta hermosa provincia. Su música suena a tierra, a viento, a verde…
+            su voz entreteje historias a través de melodías que no solo transmiten un mensaje sino sentires que interpelan y movilizan al que escucha.
+            Otra que tiene una fuerza increíble y apuesta a mantener viva la llama de nuestras tierras”.
+          </div>
+          <div class="source">Iñaki Duran — Gemas del Sur<br><a href="https://inakiduran.wordpress.com/2021/09/28/neuquen-gemas-del-sur/" target="_blank"><span data-es>Leer nota</span><span data-en style="display:none">Read article</span></a></div>
+        </div>
+
+        <div class="card span-6">
+          <div class="quote">
+            “Abrió el escenario Limay de la Fiesta de la Confluencia. Con su historia y con su arte, se ganó el corazón del público.”
+          </div>
+          <div class="source">Diario La Mañana del Neuquén<br><a href="https://www.lmneuquen.com/neuquen/dejo-la-abogacia-dedicarse-la-musica-y-abrio-el-escenario-mayor-la-fiesta-la-confluencia-n1092097" target="_blank"><span data-es>Leer nota</span><span data-en style="display:none">Read article</span></a></div>
+        </div>
+
+        <div class="card span-6">
+          <div class="quote">
+            “<span data-es>Una voz, una guitarrista, una poetisa, la dulzura y la fuerza en melodías.</span><span data-en style="display:none">A voice, a guitarist, a poet — sweetness and strength in melodies.</span>”
+          </div>
+          <div class="source">Diario Río Negro<br><a href="https://www.rionegro.com.ar/macarena-montovi-musica-para-despertar-1721075/" target="_blank"><span data-es>Leer nota</span><span data-en style="display:none">Read article</span></a></div>
+        </div>
+
+        <div class="card span-6">
+          <div class="quote">
+            “<span data-es>La cantante patagónica Maca Montovi trae sus composiciones a Mar del Plata.</span><span data-en style="display:none">Patagonian singer Maca Montovi brings her compositions to Mar del Plata.</span>”
+          </div>
+          <div class="source">Diario La Capital (Mar del Plata)<br><a href="https://www.lacapitalmdp.com/la-cantante-patagonica-maca-montovi-trae-sus-composiciones-a-mar-del-plata/" target="_blank"><span data-es>Leer nota</span><span data-en style="display:none">Read article</span></a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="grid">
+        <div class="card span-12">
+          <h2><span data-es>Contacto</span><span data-en style="display:none">Contact</span></h2>
+          <p>
+            <strong>Email:</strong> <a href="mailto:macamontovi@gmail.com">macamontovi@gmail.com</a><br/>
+            <strong>WhatsApp:</strong> <a href="tel:+5492994543271">+54 9 299 454 3271</a><br/>
+            <strong>Dirección:</strong> Pringles 335, NQN
+          </p>
+          <p style="margin-top:12px" class="mini">
+            </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Maca Montovi
+    </footer>
+  </div>
+
+  <script>
+function setLang(lang){
+  try { localStorage.setItem('lang', lang); } catch(e){}
+  document.querySelectorAll('[data-es]').forEach(el=>{ el.style.display = (lang==='es') ? '' : 'none'; });
+  document.querySelectorAll('[data-en]').forEach(el=>{ el.style.display = (lang==='en') ? '' : 'none'; });
+}
+document.addEventListener('DOMContentLoaded', ()=>{
+  let lang = 'es';
+  try { lang = localStorage.getItem('lang') || 'es'; } catch(e){}
+  setLang(lang);
+});
+</script>
+
+</div>
+<div id="lang-en" style="display:none">
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <strong>Maca Montovi</strong>
+        <span class="pill">MEDIA KIT</span>
+      </div>
+      <nav>
+        <a href="#sobre">About</a>
+        <a href="#musica">Music</a>
+        <a href="#prensa">Press</a>
+        <a href="#contacto">Contact</a>
+      </nav>
+    </div>
+  <div class="lang" style="margin-left:auto;font-size:14px"><a href="#" data-langbtn="es">ES</a> | <a href="#" data-langbtn="en">EN</a></div></header>
+
+  <div class="wrap">
+    <div class="hero" role="banner" aria-label="Portada">
+      <div class="hero-inner">
+        <div>
+          <div class="kicker">Singer-songwriter • Multi-instrumentalist • Poet</div>
+          <h1>Maca Montovi</h1>
+          <p class="lead">
+            Folk • Rock • Raíz latinoamericana — canciones atravesadas por el paisaje patagónico, con una lírica profunda, poética, feminista y comprometida.
+          </p>
+
+          <div class="cta">
+            <a class="btn primary" href="mailto:macamontovi@gmail.com">Bookings</a>
+            <a class="btn" href="https://open.spotify.com/album/5vfARodClnxv7RDfROYTUC?si=YPVlgCpNTA24aKGU3jAATQ" target="_blank" rel="noopener">Listen en Spotify</a>
+            <a class="btn" href="https://youtu.be/LpT8nBG0h-A" target="_blank" rel="noopener">Ver video</a>
+          </div>
+
+          <div class="quick" aria-label="Links">
+            <a class="chip" href="https://www.instagram.com/macamontovi/" target="_blank" rel="noopener">Instagram</a>
+            <a class="chip" href="https://tidal.com/browse/artist/23736854" target="_blank" rel="noopener">Tidal</a>
+            <a class="chip" href="https://www.youtube.com/channel/UCK7TW81GBDdIOm1QP8N-A7w" target="_blank" rel="noopener">YouTube</a>
+          </div>
+
+          <div class="mini">Pringles 335, NQN · +54 9 299 454 3271</div>
+        </div>
+
+        <div class="hero-card" aria-label="Contact">
+          <div class="contact-line">
+            <div><strong>Email</strong> · <a href="mailto:macamontovi@gmail.com">macamontovi@gmail.com</a></div>
+            <div><strong>WhatsApp</strong> · <a href="tel:+5492994543271">+54 9 299 454 3271</a></div>
+            <div><strong>Dirección</strong> · Pringles 335, NQN</div>
+          </div>
+          <div class="mini" style="margin-top:12px">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="sobre">
+      <div class="grid">
+        <div class="card span-7">
+          <h2>About</h2>
+          <p>
+            Patagonian singer-songwriter, multi-instrumentalist and poet. Her music blends folk, rock and Latin American roots with deep, poetic and socially engaged lyrics. She performs in solo, duo, trio and full band formats, presenting songs from her albums <em>Despierta</em> and <em>La forma del agua</em>, along with selected reinterpretations. She also presents an interdisciplinary show that includes poetry from her book <em>La tumba de las aves</em>.
+          </p>
+        </div>
+
+        <div class="span-5">
+          <div class="bio-figure">
+            <img src="assets/page3_img2.jpeg" alt="Maca Montovi — foto" />
+          </div>
+          <div class="bio-figure" style="margin-top:14px">
+            <img src="assets/page2_img1.jpeg" alt="Media kit — composición visual" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="musica">
+      <div class="grid">
+        <div class="card span-4">
+          <h2>Music</h2>
+          <p>
+            <a class="btn" href="https://open.spotify.com/album/5vfARodClnxv7RDfROYTUC?si=YPVlgCpNTA24aKGU3jAATQ" target="_blank" rel="noopener">Spotify</a>
+          </p>
+        </div>
+        <div class="card span-4">
+          <h2>&nbsp;</h2>
+          <p>
+            <a class="btn" href="https://tidal.com/browse/artist/23736854" target="_blank" rel="noopener">Tidal</a>
+          </p>
+        </div>
+        <div class="card span-4">
+          <h2>&nbsp;</h2>
+          <p>
+            <a class="btn" href="https://www.youtube.com/channel/UCK7TW81GBDdIOm1QP8N-A7w" target="_blank" rel="noopener">YouTube</a>
+          </p>
+        </div>
+
+        <div class="card span-12">
+          <h3>Featured video</h3>
+          <iframe src="https://www.youtube.com/embed/LpT8nBG0h-A" title="Featured video — Maca Montovi" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="prensa">
+      <div class="grid">
+        <div class="card span-12" style="padding:0; overflow:hidden">
+          <img src="assets/page3_img1.jpeg" alt="Press — fondo" style="width:100%; height:auto; display:block; opacity:.92" />
+        </div>
+
+        <div class="card span-6">
+          <div class="quote">
+            “Otra de las increíbles cantantes y artistas que tiene esta hermosa provincia. Her music sounds like earth, wind, and green landscapes…
+            su voz entreteje historias a través de melodías que no solo transmiten un mensaje sino sentires que interpelan y movilizan al que escucha.
+            Otra que tiene una fuerza increíble y apuesta a mantener viva la llama de nuestras tierras”.
+          </div>
+          <div class="source">Iñaki Duran — Gemas del Sur<br><a href="https://inakiduran.wordpress.com/2021/09/28/neuquen-gemas-del-sur/" target="_blank">Read article</a></div>
+        </div>
+
+        <div class="card span-6">
+          <div class="quote">
+            “She opened the Limay stage at the Fiesta de la Confluencia. With her story and her art, she won the audience’s heart.”
+          </div>
+          <div class="source">Diario La Mañana del Neuquén<br><a href="https://www.lmneuquen.com/neuquen/dejo-la-abogacia-dedicarse-la-musica-y-abrio-el-escenario-mayor-la-fiesta-la-confluencia-n1092097" target="_blank">Read article</a></div>
+        </div>
+
+        <div class="card span-6">
+          <div class="quote">
+            “A voice, a guitarist, a poet — sweetness and strength in melodies.”
+          </div>
+          <div class="source">Diario Río Negro<br><a href="https://www.rionegro.com.ar/macarena-montovi-musica-para-despertar-1721075/" target="_blank">Read article</a></div>
+        </div>
+
+        <div class="card span-6">
+          <div class="quote">
+            “Patagonian singer Maca Montovi brings her compositions to Mar del Plata.”
+          </div>
+          <div class="source">Diario La Capital (Mar del Plata)<br><a href="https://www.lacapitalmdp.com/la-cantante-patagonica-maca-montovi-trae-sus-composiciones-a-mar-del-plata/" target="_blank">Read article</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="grid">
+        <div class="card span-12">
+          <h2>Contact</h2>
+          <p>
+            <strong>Email:</strong> <a href="mailto:macamontovi@gmail.com">macamontovi@gmail.com</a><br/>
+            <strong>WhatsApp:</strong> <a href="tel:+5492994543271">+54 9 299 454 3271</a><br/>
+            <strong>Dirección:</strong> Pringles 335, NQN
+          </p>
+          <p style="margin-top:12px" class="mini">
+            </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Maca Montovi
+    </footer>
+  </div>
+
+  <script>
+function setLang(lang){
+  try { localStorage.setItem('lang', lang); } catch(e){}
+  document.querySelectorAll('[data-es]').forEach(el=>{ el.style.display = (lang==='es') ? '' : 'none'; });
+  document.querySelectorAll('[data-en]').forEach(el=>{ el.style.display = (lang==='en') ? '' : 'none'; });
+}
+document.addEventListener('DOMContentLoaded', ()=>{
+  let lang = 'es';
+  try { lang = localStorage.getItem('lang') || 'es'; } catch(e){}
+  setLang(lang);
+});
+</script>
+
+</div>
+<script>
+(function(){
+  function setLang(lang){
+    try{localStorage.setItem('lang', lang);}catch(e){}
+    document.getElementById('lang-es').style.display = (lang==='es') ? '' : 'none';
+    document.getElementById('lang-en').style.display = (lang==='en') ? '' : 'none';
+  }
+  document.addEventListener('click', function(e){
+    const a = e.target.closest('a[data-langbtn]');
+    if(!a) return;
+    e.preventDefault();
+    setLang(a.getAttribute('data-langbtn'));
+  });
+  document.addEventListener('DOMContentLoaded', function(){
+    let lang='es';
+    try{lang = localStorage.getItem('lang') || 'es';}catch(e){}
+    setLang(lang);
+  });
+})();
+</script>
+</body>
+</html>
